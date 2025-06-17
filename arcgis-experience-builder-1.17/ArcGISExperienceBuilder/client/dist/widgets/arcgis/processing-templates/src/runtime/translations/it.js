@@ -1,0 +1,1 @@
+System.register([],(function(e){return{execute:function(){e({_widgetLabel:"Elaborazione modelli",selectLayers:"Seleziona layer",noLayersTip:"Attualmente non ci sono layer immagini o layer immagini tile da visualizzare.",openSettingPanelTip:"Aprire il pannello delle impostazioni del widget per aggiornare le configurazioni."})}}}));

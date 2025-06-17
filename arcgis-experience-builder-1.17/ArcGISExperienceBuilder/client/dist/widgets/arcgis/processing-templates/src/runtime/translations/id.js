@@ -1,0 +1,1 @@
+System.register([],(function(a){return{execute:function(){a({_widgetLabel:"Memproses Template",selectLayers:"Pilih layer",noLayersTip:"Saat ini tidak ada Layer Citra atau Layer Citra Berubin yang dapat ditampilkan.",openSettingPanelTip:"Silakan buka panel pengaturan widget untuk memperbarui konfigurasi."})}}}));

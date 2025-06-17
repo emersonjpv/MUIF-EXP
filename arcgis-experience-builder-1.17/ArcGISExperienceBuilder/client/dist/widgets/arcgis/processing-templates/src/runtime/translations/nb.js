@@ -1,0 +1,1 @@
+System.register([],(function(e){return{execute:function(){e({_widgetLabel:"Behandler maler",selectLayers:"Velg lag",noLayersTip:"Det er for tiden ingen bildelag eller flisinndelte bildelag \xe5 vise.",openSettingPanelTip:"\xc5pne innstillingspanelet for miniprogram for \xe5 oppdatere konfigurasjonen."})}}}));

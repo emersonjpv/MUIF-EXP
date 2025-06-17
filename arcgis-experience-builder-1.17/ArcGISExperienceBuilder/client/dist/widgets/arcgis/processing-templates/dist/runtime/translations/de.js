@@ -1,0 +1,1 @@
+System.register([],(function(e){return{execute:function(){e({_widgetLabel:"Verarbeitungsvorlagen",selectLayers:"Layer ausw\xe4hlen",noLayersTip:"Derzeit gibt es keine Bilddaten-Layer oder gekachelte Bilddaten-Layer zum Anzeigen.",openSettingPanelTip:"\xd6ffnen Sie das Einstellungsfenster des Widgets, um die Konfigurationen zu aktualisieren."})}}}));

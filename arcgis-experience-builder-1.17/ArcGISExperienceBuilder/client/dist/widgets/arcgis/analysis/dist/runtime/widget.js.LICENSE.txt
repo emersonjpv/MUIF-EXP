@@ -1,0 +1,12 @@
+/*!
+ * All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+ * CURRENT_STENCIL_VERSION
+ */
+
+/*!
+ * All material copyright Esri, All Rights Reserved, unless otherwise specified.
+ * See https://js.arcgis.com/4.32/esri/copyright.txt for details.
+ * v4.32.0-next.141
+ */
+
+/*!__STENCIL_STATIC_IMPORT_SWITCH__*/

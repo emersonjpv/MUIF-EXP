@@ -1,0 +1,14 @@
+{
+  "fieldLoadingErrorText": "Nie można wczytać pól.",
+  "fieldNotAvailable": "Niepowodzenie wczytania pola.",
+  "fieldTypesIncompatible": "Nie ma dostępnych zgodnych pól.",
+  "layerNotSelected": "Nie wybrano warstwy do zapełnienia pól.",
+  "loadingFields": "Wczytywanie pól",
+  "multipleFieldsNotAvailable": "Niepowodzenie wczytania co najmniej jednego pola.",
+  "noSearchResults": "Nie znaleziono zgodnych pól.",
+  "requiredErrorLabelDefault": "Pole",
+  "requiredErrorMessage": "Ten parametr jest wymagany.",
+  "selectFieldPicklistHeading": "Wybierz pole",
+  "selectOkBtnText": "Wybierz",
+  "selectVariables": "Wybierz zmienne"
+}

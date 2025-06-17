@@ -1,0 +1,10 @@
+{
+  "fieldNotAvailable": "Niepowodzenie wczytania pola.",
+  "fieldTypesIncompatible": "Nie ma dostępnych zgodnych pól.",
+  "inputPlaceholderText": "Wybierz pole",
+  "layerNotSelected": "Nie wybrano warstwy do zapełnienia pól.",
+  "multiSelectFieldButtonText": "Pole",
+  "multipleFieldsNotAvailable": "Niepowodzenie wczytania co najmniej jednego pola.",
+  "removeField": "Usuń",
+  "replaceField": "Zastąp pole"
+}

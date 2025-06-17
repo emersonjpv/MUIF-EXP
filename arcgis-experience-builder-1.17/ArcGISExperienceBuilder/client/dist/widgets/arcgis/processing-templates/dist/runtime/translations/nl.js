@@ -1,0 +1,1 @@
+System.register([],(function(e){return{execute:function(){e({_widgetLabel:"Bezig met verwerken sjablonen",selectLayers:"Lagen selecteren",noLayersTip:"Er zijn momenteel geen beeldlagen of tiled imagery layers die u kunt weergeven.",openSettingPanelTip:"Open het instellingenpaneel van de widget om de configuraties bij te werken."})}}}));

@@ -1,0 +1,1 @@
+System.register([],(function(a){return{execute:function(){a({_widgetLabel:"Visualizador de Imagens Orientadas",noOiLayersError:"Nenhuma camada de imagem orientada no mapa selecionado.",noMapSelectedError:"Nenhum mapa selecionado.",defaultError:"Falha ao carregar o widget.",enableViewer:"Habilitar visualizador",disableViewer:"Desativar visualizador"})}}}));

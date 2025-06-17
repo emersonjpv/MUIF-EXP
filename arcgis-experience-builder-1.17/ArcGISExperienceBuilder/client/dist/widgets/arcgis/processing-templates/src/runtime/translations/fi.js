@@ -1,0 +1,1 @@
+System.register([],(function(t){return{execute:function(){t({_widgetLabel:"K\xe4sitell\xe4\xe4n malleja",selectLayers:"Valitse karttatasot",noLayersTip:"Juuri nyt ei ole n\xe4ytett\xe4vi\xe4 kuva-aineistokarttatasoja tai tiilitettyj\xe4 kuva-aineistokarttasoja.",openSettingPanelTip:"P\xe4ivit\xe4 m\xe4\xe4ritykset avaamalla pienoisohjelman asetuspaneeli."})}}}));

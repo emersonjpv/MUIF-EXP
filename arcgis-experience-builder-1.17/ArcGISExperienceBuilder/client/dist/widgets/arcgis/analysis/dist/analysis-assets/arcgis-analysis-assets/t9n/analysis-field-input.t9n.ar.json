@@ -1,0 +1,14 @@
+{
+  "fieldLoadingErrorText": "يتعذر تحميل الحقول.",
+  "fieldNotAvailable": "فشل تحميل الحقل.",
+  "fieldTypesIncompatible": "لا تتوفر حقول متوافقة.",
+  "layerNotSelected": "لم يتم تحديد طبقة لتعبئة الحقول.",
+  "loadingFields": "تحميل الحقول",
+  "multipleFieldsNotAvailable": "فشل تحميل حقل واحد أو أكثر.",
+  "noSearchResults": "لم يتم العثور على حقول مطابقة.",
+  "requiredErrorLabelDefault": "حقل",
+  "requiredErrorMessage": "هذه المعلمة مطلوبة.",
+  "selectFieldPicklistHeading": "حدد حقلاً",
+  "selectOkBtnText": "تحديد",
+  "selectVariables": "تحديد متغيرات"
+}

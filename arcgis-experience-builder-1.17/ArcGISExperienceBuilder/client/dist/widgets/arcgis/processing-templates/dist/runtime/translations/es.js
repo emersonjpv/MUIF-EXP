@@ -1,0 +1,1 @@
+System.register([],(function(e){return{execute:function(){e({_widgetLabel:"Plantillas de procesamiento",selectLayers:"Seleccionar capas",noLayersTip:"En la actualidad no hay capas de im\xe1genes ni capas de im\xe1genes en teselas para mostrar.",openSettingPanelTip:"Abra el panel de configuraci\xf3n del widget para actualizar las configuraciones."})}}}));

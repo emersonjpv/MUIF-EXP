@@ -1,0 +1,14 @@
+{
+  "fieldLoadingErrorText": "Неможливо завантажити поля.",
+  "fieldNotAvailable": "Не вдалося завантажити поле.",
+  "fieldTypesIncompatible": "Немає сумісних полів.",
+  "layerNotSelected": "Не вибрано шар для заповнення полів.",
+  "loadingFields": "Завантаження полів",
+  "multipleFieldsNotAvailable": "Не вдалося завантажити одне або кілька полів.",
+  "noSearchResults": "Не знайдено полів, які збігаються.",
+  "requiredErrorLabelDefault": "Поле A",
+  "requiredErrorMessage": "Цей параметр обов'язковий.",
+  "selectFieldPicklistHeading": "Вибрати поле",
+  "selectOkBtnText": "Вибрати",
+  "selectVariables": "Вибрати змінні"
+}

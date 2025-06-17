@@ -1,0 +1,1 @@
+System.register([],(function(e){return{execute:function(){e({_widgetLabel:"Bearbetar mallar",selectLayers:"V\xe4lj lager",noLayersTip:"Det finns f\xf6r n\xe4rvarande inga bildlager eller tilebildlager att visa.",openSettingPanelTip:"\xd6ppna widgetinst\xe4llningspanelen f\xf6r att uppdatera konfigurationerna."})}}}));

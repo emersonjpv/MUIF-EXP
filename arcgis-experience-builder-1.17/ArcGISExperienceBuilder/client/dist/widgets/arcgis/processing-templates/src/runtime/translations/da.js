@@ -1,0 +1,1 @@
+System.register([],(function(e){return{execute:function(){e({_widgetLabel:"Behandlingsskabeloner",selectLayers:"V\xe6lg lag",noLayersTip:"Der er ingen aktuelle billedlag eller tile-billedlag at vise.",openSettingPanelTip:"\xc5bn widget-indstillingspanelet for at opdatere konfigurationerne."})}}}));

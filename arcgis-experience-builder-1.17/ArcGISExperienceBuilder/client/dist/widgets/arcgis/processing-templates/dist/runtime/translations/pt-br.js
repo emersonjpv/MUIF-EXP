@@ -1,0 +1,1 @@
+System.register([],(function(a){return{execute:function(){a({_widgetLabel:"Modelos de Processamento",selectLayers:"Selecionar camadas",noLayersTip:"No momento, n\xe3o h\xe1 Camadas de Imagens ou Camadas de Imagens Mosaicadas para exibir.",openSettingPanelTip:"Abra o painel de configura\xe7\xe3o do widget para atualizar as configura\xe7\xf5es."})}}}));

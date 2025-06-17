@@ -1,0 +1,1 @@
+System.register([],(function(e){return{execute:function(){e({_widgetLabel:"Predlo\u0161ci obrade",selectLayers:"Odaberite slojeve",noLayersTip:"Trenutno nema slojeva snimki ili nagnutih slojeva sa snimkama za prikaz.",openSettingPanelTip:"Otvorite plo\u010du s postavkama widgeta da a\u017eurirate konfiguracije."})}}}));

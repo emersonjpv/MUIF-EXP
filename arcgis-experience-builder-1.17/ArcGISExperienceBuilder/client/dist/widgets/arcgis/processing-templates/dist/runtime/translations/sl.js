@@ -1,0 +1,1 @@
+System.register([],(function(e){return{execute:function(){e({_widgetLabel:"Predloge procesiranja",selectLayers:"Izberi sloje",noLayersTip:"Trenutno ni nobenih slikovnih slojev ali plo\u0161\u010di\u010dnih slikovnih slojev za prikaz.",openSettingPanelTip:"Odprite plo\u0161\u010do za nastavitve pripomo\u010dkov in posodobite konfiguracije."})}}}));

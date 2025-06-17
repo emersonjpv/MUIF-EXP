@@ -1,0 +1,1 @@
+System.register([],(function(e){return{execute:function(){e({_widgetLabel:"Szablony przetwarzania",selectLayers:"Wybierz warstwy",noLayersTip:"Obecnie nie ma \u017cadnych warstw zobrazowa\u0144 ani warstw zobrazowa\u0144 kafelkowych do wy\u015bwietlenia.",openSettingPanelTip:"Otw\xf3rz panel ustawie\u0144 wid\u017cet\xf3w, aby zaktualizowa\u0107 konfiguracje."})}}}));

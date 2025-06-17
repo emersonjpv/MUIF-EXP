@@ -1,0 +1,10 @@
+{
+  "name": "poster",
+  "type": "template",
+  "templateType": "fixed-modal-window",
+  "label": "Poster",
+  "thumbnail": "thumbnail.png",
+  "order": 10,
+  "thumbnailWidth": 320,
+  "thumbnailHeight": 268
+}

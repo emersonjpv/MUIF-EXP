@@ -1,0 +1,1 @@
+System.register([],(function(e){return{execute:function(){e({_widgetLabel:"T\xf6\xf6tlemismallid",selectLayers:"Vali kihid",noLayersTip:"Praegu pole kuvamiseks \xfchtegi pildikihti ega paanitud pildikihti.",openSettingPanelTip:"Avage konfiguratsioonide uuendamiseks vidina s\xe4tete paneel."})}}}));

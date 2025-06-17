@@ -1,0 +1,1 @@
+System.register([],(function(e){return{execute:function(){e({_widgetLabel:"Plantilles de processament",selectLayers:"Seleccioneu les capes",noLayersTip:"Actualment no hi ha cap capa d'imatges ni capa d'imatges amb tessel\xb7les.",openSettingPanelTip:"Obriu la subfinestra de configuraci\xf3 del widget per actualitzar la configuraci\xf3."})}}}));
