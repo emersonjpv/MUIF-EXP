@@ -1,0 +1,12 @@
+.document_css{
+  overflow: auto;
+  height: 600px;
+}
+
+.dms_center_items{ 
+  text-align: center;
+}
+
+.dms_center_items canvas{ 
+  place-self: center;
+}

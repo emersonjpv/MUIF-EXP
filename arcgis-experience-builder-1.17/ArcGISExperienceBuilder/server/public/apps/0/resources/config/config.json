@@ -265,9 +265,19 @@
       "label": "Map FixedLayout"
     },
     "layout_24": {
-      "content": {},
+      "content": {
+        "0": {
+          "type": "WIDGET",
+          "widgetId": "widget_45",
+          "bbox": {},
+          "setting": {}
+        }
+      },
       "type": "FIXED",
-      "label": "Controller layout"
+      "label": "Controller layout",
+      "order": [
+        "0"
+      ]
     },
     "layout_34": {
       "content": {
@@ -1637,7 +1647,12 @@
           "openStarts": [],
           "displayType": "STACK",
           "vertical": false,
-          "size": {},
+          "size": {
+            "widget_45": {
+              "width": 437.77496337890625,
+              "height": 642.6875
+            }
+          },
           "alignment": "start"
         },
         "appearance": {
@@ -2397,6 +2412,15 @@
       },
       "id": "widget_43",
       "label": "Testo 4"
+    },
+    "widget_45": {
+      "uri": "widgets/documentazione-dms/",
+      "version": "1.15.0",
+      "label": "DMS",
+      "config": {
+        "exampleConfigProperty": "test"
+      },
+      "id": "widget_45"
     }
   },
   "exbVersion": "1.17.0",
@@ -2623,5 +2647,5 @@
       "portalUrl": "https://muif.collaudodati.t-rfiservizi.corp/arcgis"
     }
   },
-  "timestamp": 1750237299662
+  "timestamp": 1750237639515
 }

@@ -10668,6 +10668,66 @@
     "group": 2
   },
   {
+    "name": "documentazione-dms",
+    "manifest": {
+      "name": "documentazione-dms",
+      "label": "DMS",
+      "type": "widget",
+      "version": "1.15.0",
+      "exbVersion": "1.15.0",
+      "author": "Esri R&D Center Beijing",
+      "description": "This is a barebones, DMS widget. It includes an example of how to use the config file, and it includes a placeholder SVG icon. It intentionally does not include the following so you can use this to start from scratch: i18n translations, a Settings panel, unit tests. See the documentation for more information on how to implement these features.",
+      "copyright": "",
+      "license": "http://www.apache.org/licenses/LICENSE-2.0",
+      "properties": {
+        "hasSettingPage": false
+      },
+      "translatedLocales": [
+        "en"
+      ],
+      "defaultSize": {
+        "width": 800,
+        "height": 500
+      }
+    },
+    "i18nLabel": {},
+    "i18nDescription": {},
+    "uri": "widgets/documentazione-dms/",
+    "icon": "widgets/documentazione-dms/icon.svg",
+    "order": 700,
+    "group": 7
+  },
+  {
+    "name": "documentazione-dms-pdf",
+    "manifest": {
+      "name": "documentazione-dms-pdf",
+      "label": "DMS PDF",
+      "type": "widget",
+      "version": "1.15.0",
+      "exbVersion": "1.15.0",
+      "author": "Esri R&D Center Beijing",
+      "description": "This is a barebones, DMS widget. It includes an example of how to use the config file, and it includes a placeholder SVG icon. It intentionally does not include the following so you can use this to start from scratch: i18n translations, a Settings panel, unit tests. See the documentation for more information on how to implement these features.",
+      "copyright": "",
+      "license": "http://www.apache.org/licenses/LICENSE-2.0",
+      "properties": {
+        "hasSettingPage": false
+      },
+      "translatedLocales": [
+        "en"
+      ],
+      "defaultSize": {
+        "width": 800,
+        "height": 500
+      }
+    },
+    "i18nLabel": {},
+    "i18nDescription": {},
+    "uri": "widgets/documentazione-dms-pdf/",
+    "icon": "widgets/documentazione-dms-pdf/icon.svg",
+    "order": 700,
+    "group": 7
+  },
+  {
     "name": "simple",
     "manifest": {
       "name": "simple",

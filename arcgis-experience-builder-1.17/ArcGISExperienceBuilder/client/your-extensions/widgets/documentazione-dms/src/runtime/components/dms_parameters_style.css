@@ -1,0 +1,11 @@
+.select_dms{
+  margin: 1px 0px;
+    width: -webkit-fill-available;
+    height: 35px;
+}
+
+
+.accordion{
+  width: 100%;
+  border: none;
+}

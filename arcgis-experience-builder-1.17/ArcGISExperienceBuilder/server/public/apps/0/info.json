@@ -2,7 +2,7 @@
   "created": 1750237148633,
   "description": "",
   "id": "0",
-  "modified": 1750237299719,
+  "modified": 1750237641840,
   "owner": "portaladmin",
   "tags": [],
   "thumbnail": null,
@@ -13,11 +13,12 @@
     "EXB Experience",
     "Ready To Use",
     "JavaScript",
-    "status: Draft",
+    "status: Published",
     "version:1.17.0"
   ],
   "portalUrl": "https://muif.collaudodati.t-rfiservizi.corp/arcgis",
   "username": "portaladmin",
   "name": "PRONTO PER PRODUZIONE",
-  "isLocalApp": true
+  "isLocalApp": true,
+  "url": null
 }
