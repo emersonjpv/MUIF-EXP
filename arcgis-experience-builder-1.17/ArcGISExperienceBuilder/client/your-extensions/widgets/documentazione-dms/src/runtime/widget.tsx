@@ -71,17 +71,17 @@ function App() {
 
     <div className="min-h-screen bg-gray-100">
 
-      <button className="accordion">Parametri{lastValue} <span id="param_text"></span></button>
+      {/* <button className="accordion">Parametri{lastValue} <span id="param_text"></span></button> */}
 
 
-      <div className="min-h-screen bg-gray-100 p-8">
+      <div className="min-h-screen bg-gray-100 p-4">
         <div className="max-w-6xl mx-auto">
           <DMSparameters varFromChild={childValueHandler} />
         </div>
       </div>
 
 
-      <button className="accordion">PDF <span id="param_text"></span></button>
+      {/* <button className="accordion">PDF <span id="param_text"></span></button> */}
 
       {/* <PDFViewer dt={samplePdfUrl} /> */}
 

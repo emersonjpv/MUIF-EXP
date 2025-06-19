@@ -1,11 +1,32 @@
-.select_dms{
-  margin: 1px 0px;
+.inner_dms_params_container{
+
+  /* margin: 20px; */
+
+}
+.select_dms {
+    margin: 5px 10px;
     width: -webkit-fill-available;
-    height: 35px;
+    height: 24px;
+    border: solid lightgrey 0.10px;
 }
 
+.select_dms{
+border: 1px solid #ddd}
+
+select:focus{
+    border: 1px solid rgb(2, 157, 229);
+    outline-style: none;
+}
+
+.parametri_dms{
+  margin: 10px;;
+  font-size: smaller;
+
+}
 
 .accordion{
-  width: 100%;
-  border: none;
+    width: 100%;
+    border: none;
+    margin-bottom: 14px;
+    margin-top: 14px;
 }

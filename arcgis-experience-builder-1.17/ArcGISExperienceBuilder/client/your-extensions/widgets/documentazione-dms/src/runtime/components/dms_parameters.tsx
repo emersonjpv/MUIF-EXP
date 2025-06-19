@@ -8,7 +8,7 @@ import intereese_Example from './intereese_Example.json'
 // import { PDFService, PDFDocument } from '../components/PDFService';
 import intereese_Example2 from './intereese_Example (1).json'
 import wfwf from './wfwf.json'
-
+import FilteringSelect from './filteringselect';
 
 
 
@@ -340,13 +340,33 @@ const DMSparameters: React.FC<DMSparametersProps> = ({ varFromChild }) => {
 
 
   }
+
+
+  function letmesee(val:any) {
+    console.log('val',val)
+  }
+
+  var options = [{label:'weee', value:'0jqej'}]
   return (
 
     <div>
 
+            <button className="accordion">Parametri <span id="param_text"></span></button>
+
+
+      <div className='inner_dms_params_container'> 
+
+
+
+
       {/* <PdfGenerator /> */}
 
-      <h3>Tipologia</h3>
+      <h3 className='parametri_dms'>Tipologia</h3>
+
+      <FilteringSelect options={tipologie} onChange={letmesee}>
+
+
+      </FilteringSelect>
       <select className='select_dms'
         onChange={e => tipologiaOnChange('tipologia', e.currentTarget.value)}
       >o
@@ -358,7 +378,7 @@ const DMSparameters: React.FC<DMSparametersProps> = ({ varFromChild }) => {
 
       </select>
 
-      <h3>Sede Tecnica:</h3>
+      <h3 className='parametri_dms'>Sede Tecnica:</h3>
 
       <select className='select_dms'
         onChange={e => tipologiaOnChange('sede_tecnica', e.target.value)}
@@ -372,7 +392,9 @@ const DMSparameters: React.FC<DMSparametersProps> = ({ varFromChild }) => {
       </select>
 
 
-      <h3>Documentazione DMS</h3>
+
+
+      <h3 className='parametri_dms'>Documentazione DMS</h3>
 
       <select className='select_dms'
         onChange={e => tipologiaOnChange('dms_pdf', e.target.value)}
@@ -385,6 +407,9 @@ const DMSparameters: React.FC<DMSparametersProps> = ({ varFromChild }) => {
 
       </select>
 
+</div>
+
+      <button className="accordion">PDF <span id="param_text"></span></button>
 
       <PDFViewer
         data={currentPDFselected}

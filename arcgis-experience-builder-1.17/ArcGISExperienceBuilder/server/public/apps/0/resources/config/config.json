@@ -1649,7 +1649,7 @@
           "vertical": false,
           "size": {
             "widget_45": {
-              "width": 759.7749633789062,
+              "width": 639.7749633789062,
               "height": 624.3755
             }
           },
@@ -2647,7 +2647,7 @@
       "portalUrl": "https://muif.collaudodati.t-rfiservizi.corp/arcgis"
     }
   },
-  "timestamp": 1750319952157,
+  "timestamp": 1750328481315,
   "customTheme": {
     "colors": {
       "primary": "#0e6b69"
