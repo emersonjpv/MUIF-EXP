@@ -6,6 +6,10 @@ import Query from "@arcgis/core/rest/support/Query.js";
 import intereese_Example from './intereese_Example.json'
 // import { Document, Page, pdfjs } from 'react-pdf';
 // import { PDFService, PDFDocument } from '../components/PDFService';
+import intereese_Example2 from './intereese_Example (1).json'
+import wfwf from './wfwf.json'
+
+
 
 
 
@@ -45,6 +49,10 @@ const pdf_array = config.pdf_array
 console.log('pdf_array',pdf_array)
 
 pdf_array.push(intereese_Example)
+pdf_array.push(intereese_Example2)
+pdf_array.push(wfwf)
+
+
 
 console.log('pdf_array',pdf_array)
 
@@ -246,6 +254,11 @@ async function _getData(type: string, params: any) {
 const DMSparameters: React.FC<DMSparametersProps> = ({ varFromChild }) => {
 
   const [sedetecnica_array, setsede_tecnica_array] = useState([]);
+  const [array_pdfs, setarray_pdfs] = useState([]); // QUANDO CI SARANNO I SERVIZI METTERE 'array_pdfs' al posto di 'pdf_array'
+  const [currentPDFselected, setcurrentPDFselected] = useState(pdf_array[3]);
+
+  
+
   // const [pdf_array, setPdfList] = useState([]);
 
 //   const pdfDoc = pdfService.parsePDFFromResponse(pdf_array[3].d.results[0].EData);
@@ -257,34 +270,67 @@ const DMSparameters: React.FC<DMSparametersProps> = ({ varFromChild }) => {
   function tipologiaOnChange(type: string, params: any) {
     console.log('params', params)
     console.log('config', config)
-    varFromChild(params)
+    // varFromChild(params)
+
+    _getData(type, params).then(res => {
+      setTimeout(() => {
+        console.log('_getData', res)
+        if (type == 'tipologia') {
+          setsede_tecnica_array(res)
 
 
-    // if(type == 'dms_pdf'){
-    //   var pdf_data = _sedeTecnicaPDFFilteringOnChange(params)
 
-    //   console.log(pdf_data)
-    //   varFromChild(pdf_data)
 
-    // }
-    // _getData(type, params).then(res => {
-    //   setTimeout(() => {
-    //     console.log('_getData', res)
-    //     if (type == 'tipologia') {
-    //       setsede_tecnica_array(res)
-    //     } else if (type == 'dms_pdf') {
+
+
+
+        } else if (type == 'sede_tecnica') {
           
-    //       // setPdfList(res) 
-    //       _sedeTecnicaPDFFilteringOnChange(null)
-
-    //     } else {
-    //       alert('SOMETHING WENT WRONG')
-    //     }
+          // setarray_pdfs(res)  // QUANDO CI SARANNO I SERVIZI METTERE togliere comment qui
 
 
-    //   }, 2000);
+        } else if (type == 'dms_pdf') {
+          
+          // setPdfList(res)  //NON RICORDO PERCHE MI SERVIVA QUESTO :D
+          // _sedeTecnicaPDFFilteringOnChange(null) // QUANDO CI SARANNO I SERVIZI METTERE togliere comment qui
+          setcurrentPDFselected(pdf_array[5])
+          
 
-    // })
+        } else {
+          alert('SOMETHING WENT WRONG')
+        }
+
+
+      }, 2000);
+
+    })
+
+
+    if(type == 'dms_pdf'){
+      var pdf_data = _sedeTecnicaPDFFilteringOnChange(params)
+
+      console.log(pdf_data)
+      // varFromChild(pdf_data)
+
+    }
+    _getData(type, params).then(res => {
+      setTimeout(() => {
+        console.log('_getData', res)
+        if (type == 'tipologia') {
+          setsede_tecnica_array(res)
+        } else if (type == 'dms_pdf') {
+          
+          // setPdfList(res) 
+          _sedeTecnicaPDFFilteringOnChange(null)
+
+        } else {
+          alert('SOMETHING WENT WRONG')
+        }
+
+
+      }, 2000);
+
+    })
 
 
   }
@@ -335,7 +381,7 @@ const DMSparameters: React.FC<DMSparametersProps> = ({ varFromChild }) => {
 
 
         <PDFViewer 
-                    data={pdf_array[3]}
+                    data={currentPDFselected}
                     width="100%"
                     height="600px"
                     className="w-full"

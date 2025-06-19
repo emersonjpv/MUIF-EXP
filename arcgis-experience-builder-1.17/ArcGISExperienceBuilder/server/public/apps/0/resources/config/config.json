@@ -2211,7 +2211,7 @@
           "color": "var(--light)",
           "wrap": false
         },
-        "text": "<p><strong style=\"color: var(--light); font-size: 20px;\">PRONTO PER PRODUZIONE</strong></p>"
+        "text": "<p>edwefwfewe</p>"
       },
       "id": "widget_36",
       "label": "Testo"
@@ -2647,7 +2647,7 @@
       "portalUrl": "https://muif.collaudodati.t-rfiservizi.corp/arcgis"
     }
   },
-  "timestamp": 1750319782438,
+  "timestamp": 1750319952157,
   "customTheme": {
     "colors": {
       "primary": "#0e6b69"

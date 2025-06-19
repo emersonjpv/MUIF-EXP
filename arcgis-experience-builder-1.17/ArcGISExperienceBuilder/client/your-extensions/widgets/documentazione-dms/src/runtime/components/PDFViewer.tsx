@@ -24,6 +24,7 @@ const PDFViewer: React.FC<PDFViewerProps> = ({
   const pdfUrl = useMemo(() => {
     try {
       // Estrai i dati base64 dal JSON
+      console.log('PDFViewer',data)
       const pdfData = data?.d?.results?.[0]?.EData;
       
       if (!pdfData) {
