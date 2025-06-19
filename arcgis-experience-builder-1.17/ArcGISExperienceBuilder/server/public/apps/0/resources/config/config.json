@@ -241,11 +241,11 @@
           "type": "WIDGET",
           "widgetId": "widget_25",
           "bbox": {
-            "left": "571px",
+            "left": "653px",
             "right": "44.5%",
-            "top": "665px",
-            "bottom": "4.7%",
-            "width": "138px",
+            "top": "667px",
+            "bottom": "4.5%",
+            "width": "56px",
             "height": "6.2%"
           },
           "setting": {
@@ -1649,8 +1649,8 @@
           "vertical": false,
           "size": {
             "widget_45": {
-              "width": 639.7749633789062,
-              "height": 624.3755
+              "width": 496.77496337890625,
+              "height": 613.5750122070312
             }
           },
           "alignment": "start"
@@ -2647,7 +2647,7 @@
       "portalUrl": "https://muif.collaudodati.t-rfiservizi.corp/arcgis"
     }
   },
-  "timestamp": 1750328481315,
+  "timestamp": 1750336387361,
   "customTheme": {
     "colors": {
       "primary": "#0e6b69"
