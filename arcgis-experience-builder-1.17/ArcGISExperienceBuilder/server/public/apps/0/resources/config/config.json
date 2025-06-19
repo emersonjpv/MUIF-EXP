@@ -372,9 +372,9 @@
           "type": "WIDGET",
           "bbox": {
             "left": "0px",
-            "top": "50.00px",
-            "width": "100%",
-            "height": "100%",
+            "top": "50px",
+            "width": "100.0%",
+            "height": "95.1%",
             "right": "0px",
             "bottom": "0px"
           },
@@ -404,11 +404,11 @@
         "3": {
           "type": "WIDGET",
           "bbox": {
-            "left": "460.00px",
+            "left": "340px",
             "top": "0px",
-            "width": "200.00px",
+            "width": "260px",
             "height": "50px",
-            "right": "0.00px",
+            "right": "0px",
             "bottom": "0px"
           },
           "widgetId": "widget_5",
@@ -608,31 +608,43 @@
           "type": "WIDGET",
           "widgetId": "widget_25",
           "bbox": {
-            "left": "60.00px",
-            "right": "75.0%",
-            "top": "54.00px",
-            "bottom": "86.7%",
-            "width": "300.00px",
-            "height": "6.4%"
+            "left": "271px",
+            "right": "45.1%",
+            "top": "898px",
+            "bottom": "2.8%",
+            "width": "56px",
+            "height": "4.7%"
           },
           "setting": {
             "autoProps": {
               "width": "AUTO",
               "height": "AUTO",
-              "left": false,
-              "right": true,
-              "top": false,
-              "bottom": true
-            }
+              "left": true,
+              "right": false,
+              "top": true,
+              "bottom": false
+            },
+            "vCenter": false,
+            "hCenter": false
           }
         }
       },
       "label": "Map FixedLayout"
     },
     "layout_44": {
-      "content": {},
+      "content": {
+        "0": {
+          "type": "WIDGET",
+          "widgetId": "widget_45",
+          "bbox": {},
+          "setting": {}
+        }
+      },
       "type": "FIXED",
-      "label": "Controller layout"
+      "label": "Controller layout",
+      "order": [
+        "0"
+      ]
     },
     "layout_45": {
       "content": {
@@ -931,31 +943,43 @@
           "type": "WIDGET",
           "widgetId": "widget_25",
           "bbox": {
-            "left": "4.00px",
-            "right": "75.0%",
-            "top": "50.00px",
-            "bottom": "86.7%",
-            "width": "300.00px",
-            "height": "6.4%"
+            "left": "154px",
+            "right": "41.3%",
+            "top": "599px",
+            "bottom": "3.3%",
+            "width": "56px",
+            "height": "6.9%"
           },
           "setting": {
             "autoProps": {
               "width": "AUTO",
               "height": "AUTO",
-              "left": false,
-              "right": true,
-              "top": false,
-              "bottom": true
-            }
+              "left": true,
+              "right": false,
+              "top": true,
+              "bottom": false
+            },
+            "vCenter": false,
+            "hCenter": false
           }
         }
       },
       "label": "Map FixedLayout"
     },
     "layout_54": {
-      "content": {},
+      "content": {
+        "0": {
+          "type": "WIDGET",
+          "widgetId": "widget_45",
+          "bbox": {},
+          "setting": {}
+        }
+      },
       "type": "FIXED",
-      "label": "Controller layout"
+      "label": "Controller layout",
+      "order": [
+        "0"
+      ]
     },
     "layout_55": {
       "content": {
@@ -2647,7 +2671,7 @@
       "portalUrl": "https://muif.collaudodati.t-rfiservizi.corp/arcgis"
     }
   },
-  "timestamp": 1750336387361,
+  "timestamp": 1750337229118,
   "customTheme": {
     "colors": {
       "primary": "#0e6b69"
