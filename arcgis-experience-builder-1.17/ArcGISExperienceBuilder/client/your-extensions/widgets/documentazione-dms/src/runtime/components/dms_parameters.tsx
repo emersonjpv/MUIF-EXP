@@ -293,35 +293,14 @@ const DMSparameters: React.FC<DMSparametersProps> = ({ varFromChild }) => {
 
           // setPdfList(res)  //NON RICORDO PERCHE MI SERVIVA QUESTO :D
           // _sedeTecnicaPDFFilteringOnChange(null) // QUANDO CI SARANNO I SERVIZI METTERE togliere comment qui
-          setcurrentPDFselected(pdf_array[5])
+          console.log('pdf_array',pdf_array)
+          // setcurrentPDFselected(pdf_array['LO2928-VERB.VER.TECN.P'])// LO2928-VERB.VER.TECN.P
+          // [5].d.results[0].Doknr
+          console.log('params',params)
 
-
-        } else {
-          alert('SOMETHING WENT WRONG')
-        }
-
-
-      }, 2000);
-
-    })
-
-
-    if (type == 'dms_pdf') {
-      var pdf_data = _sedeTecnicaPDFFilteringOnChange(params)
-
-      console.log(pdf_data)
-      // varFromChild(pdf_data)
-
-    }
-    _getData(type, params).then(res => {
-      setTimeout(() => {
-        console.log('_getData', res)
-        if (type == 'tipologia') {
-          setsede_tecnica_array(res)
-        } else if (type == 'dms_pdf') {
-
-          // setPdfList(res) 
-          _sedeTecnicaPDFFilteringOnChange(null)
+          let currentPDF = pdf_array.filter(el => {return el.d.results[0].Doknr == params })
+          console.log('currentPDF',currentPDF)
+          setcurrentPDFselected(currentPDF[0])
 
         } else {
           alert('SOMETHING WENT WRONG')
@@ -331,6 +310,33 @@ const DMSparameters: React.FC<DMSparametersProps> = ({ varFromChild }) => {
       }, 2000);
 
     })
+
+
+    // if (type == 'dms_pdf') {
+    //   var pdf_data = _sedeTecnicaPDFFilteringOnChange(params)
+
+    //   console.log(pdf_data)
+    //   // varFromChild(pdf_data)
+
+    // }
+    // _getData(type, params).then(res => {
+    //   setTimeout(() => {
+    //     console.log('_getData', res)
+    //     if (type == 'tipologia') {
+    //       setsede_tecnica_array(res)
+    //     } else if (type == 'dms_pdf') {
+
+    //       // setPdfList(res) 
+    //       _sedeTecnicaPDFFilteringOnChange(null)
+
+    //     } else {
+    //       alert('SOMETHING WENT WRONG')
+    //     }
+
+
+    //   }, 2000);
+
+    // })
 
 
   }

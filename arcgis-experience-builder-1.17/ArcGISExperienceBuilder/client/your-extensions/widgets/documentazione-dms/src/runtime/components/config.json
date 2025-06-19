@@ -45,9 +45,6 @@
   ],
 
   "pdf_array": [
-  { "name": "sample", "id": "0", "url": "https://muif.collaudodati.t-rfiservizi.corp/agscarto/rest/services/SOI/Opere_demo/MapServer/3/" },
-  { "name": "sample 2", "id": "1", "url": "https://muif.rfi.it/ProxyEsri/proxy.jsp?https://inreteese-wd.rfi.it/sap/opu/odata/SAP/ZMOO_SRV_SRV/DMSFILESet?$filter=Dokar%20eq%20%27PIS%27%20and%20Doknr%20eq%20%27LO0011-VERB.%20VER.%20TECN.%27%20and%20Dokvr%20eq%20%2701%27%20and%20Doktl%20eq%20%27001%27%20and%20ApplicationId%20eq%20%27005056BD660A1ED888BC5259D319E568%27%20and%20FileId%20eq%20%27005056BD660A1ED888BC5259D31A2568%27&$format=json" },
-  { "name": "sample 3", "id": "2", "url": "https://ontheline.trincoll.edu/images/bookdown/sample-local-pdf.pdf" }
   
 ]
 }
