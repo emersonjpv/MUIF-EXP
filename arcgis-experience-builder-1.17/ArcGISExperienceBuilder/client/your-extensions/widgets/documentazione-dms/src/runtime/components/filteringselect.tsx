@@ -10,7 +10,7 @@ const FilteringSelect = ({ options, onChange }) => {
   };
 
   return (
-    <Select 
+    <Select
       value={selectedOption}
       onChange={handleChange}
       options={options}

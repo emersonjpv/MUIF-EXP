@@ -90,7 +90,7 @@ const PDFViewer: React.FC<PDFViewerProps> = ({
             download
             className="text-blue-600 hover:text-blue-800 underline"
           >
-            Scarica il file PDF
+            Scarica il PDF
           </a>
         </p>
       </iframe>

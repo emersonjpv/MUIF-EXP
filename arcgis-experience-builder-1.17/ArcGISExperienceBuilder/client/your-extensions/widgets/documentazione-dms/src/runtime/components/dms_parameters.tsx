@@ -9,20 +9,10 @@ import intereese_Example from './intereese_Example.json'
 import intereese_Example2 from './intereese_Example (1).json'
 import wfwf from './wfwf.json'
 import FilteringSelect from './filteringselect';
-
-
-
-
 import { jsx, css, uuidv1, DataSourceTypes, loadArcGISJSAPIModule, getAppStore, defaultMessages as jimuCoreMessages, hooks, polished, focusElementInKeyboardMode } from 'jimu-core'
 import FeatureLayer from 'esri/layers/FeatureLayer';
 // import PDFViewer from 'widgets/documentazione-dms-pdf/src/runtime/widget';
-
 import PDFViewer from './PDFViewer';
-
-
-
-
-
 
 
 
@@ -38,24 +28,11 @@ interface DMSparametersProps {
 }
 
 const tipologie = config.tipologie
-
-
-console.log('tipologie', tipologie)
-
-
-
 const pdf_array = config.pdf_array
-
-console.log('pdf_array', pdf_array)
 
 pdf_array.push(intereese_Example)
 pdf_array.push(intereese_Example2)
 pdf_array.push(wfwf)
-
-
-
-console.log('pdf_array', pdf_array)
-
 
 async function _getData(type: string, params: any) {
 
@@ -83,10 +60,6 @@ async function _getData(type: string, params: any) {
 
 
   }
-
-
-
-  console.log('url', completeRequestUrl)
 
   const esriRequest: typeof __esri.request = await loadArcGISJSAPIModule('esri/request')
 
@@ -121,7 +94,7 @@ async function _getData(type: string, params: any) {
   let response = featureLayer.queryFeatures(query)
     .then(function (response) {
       reslength = response.features.length
-      console.log('response', reslength)
+      // console.log('response', reslength)
       response.features.forEach(el => {
         // console.log('[0].attributes.SETE',el.attributes.SETE)
 
@@ -133,7 +106,7 @@ async function _getData(type: string, params: any) {
         new_array.push(item_to_array)
       })
 
-      console.log('new_array', new_array)
+      // console.log('new_array', new_array)
       // returns a feature set with features containing the following attributes
       // STATE_NAME, COUNTY_NAME, POPULATION, POP_DENSITY
     });
@@ -147,7 +120,6 @@ async function _getData(type: string, params: any) {
 
 
 async function _sedeTecnicaPDFFilteringOnChange(Zurl) {
-  console.log('Zurl', Zurl)
   // Zurl = 'https://muif.rfi.it/ProxyEsri/proxy.jsp?https://inreteese-wd.rfi.it/sap/opu/odata/SAP/ZMOO_SRV_SRV/DMSFILESet?$filter=Dokar%20eq%20%27PIS%27%20and%20Doknr%20eq%20%27LO2928-VERB.VER.TECN.P%27%20and%20Dokvr%20eq%20%2701%27%20and%20Doktl%20eq%20%27000%27%20and%20ApplicationId%20eq%20%270050568BA6DB1EDD9D969AE370AEA58C%27%20and%20FileId%20eq%20%270050568BA6DB1EDD9D969AE370AEE58C%27&$format=json'
   // Zurl = 'https://muif.rfi.it/ProxyEsri/proxy.jsp?https://inreteese-wd.rfi.it/sap/opu/odata/SAP/ZMOO_SRV_SRV/DMSFILESet?$filter=Dokar%20eq%20%27PIS%27%20and%20Doknr%20eq%20%27LO0011-VERB.%20VER.%20TECN.%27%20and%20Dokvr%20eq%20%2701%27%20and%20Doktl%20eq%20%27001%27%20and%20ApplicationId%20eq%20%27005056BD660A1ED888BC5259D319E568%27%20and%20FileId%20eq%20%27005056BD660A1ED888BC5259D31A2568%27&$format=json'
   // Zurl = 'https://muif.rfi.it/ProxyEsri/proxy.jsp?https://inreteese-wd.rfi.it/sap/opu/odata/SAP/ZMOO_SRV_SRV/DMSFILESet?$filter'
@@ -156,8 +128,6 @@ async function _sedeTecnicaPDFFilteringOnChange(Zurl) {
 
 
   if (Zurl !== 'LO2928-VERB.VER.TECN.P') {
-    console.log('Zurl', Zurl)
-
 
     // esriConfig.request.proxyUrl = "https://muif.rfi.it/ProxyEsri/proxy.jsp";
 
@@ -173,11 +143,11 @@ async function _sedeTecnicaPDFFilteringOnChange(Zurl) {
       responseType: "json" // Richiedi che la risposta venga parsificata come JSON
     })
       .then((response) => {
-        console.log("Dati ricevuti:", response.data);
+        // console.log("Dati ricevuti:", response.data);
         // setData(response.data);
       })
       .catch((err) => {
-        console.error("Errore nella richiesta OData:", err);
+        // console.error("Errore nella richiesta OData:", err);
         // setError(err);
       })
       .finally(() => {
@@ -197,22 +167,15 @@ async function _sedeTecnicaPDFFilteringOnChange(Zurl) {
         q: "Dokar eq 'PIS' and Doknr eq 'LO0011-VERB. VER. TECN.' and Dokvr eq '01' and Doktl eq '001' and ApplicationId eq '005056BD660A1ED888BC5259D319E568' and FileId eq '005056BD660A1ED888BC5259D31A2568'"
       }
     }).then((result: any) => {
-      console.log("All request headers: ", result.getAllHeaders());
 
 
       if (result.features) {
-        console.log('_displayPDFjs result', result)
         _displayPDFjs(result.d.results[0].EData)
       }
     })
 
-    // SedeTecnicaPDFRequest.then( response => {
-    //   console.log('SedeTecnicaPDFRequest',response)
-    //     this._displayPDFjs( response.d.results[0].EData )
-    // });
 
   } else {
-    console.log('pdf_array[3].d.results[0].EData ', pdf_array[3].d.results[0].EData)
 
     _displayPDFjs(pdf_array[3].d.results[0].EData)
 
@@ -237,13 +200,10 @@ function _displayPDFjs(Base64PDF) {
 
   // let pdfJsVieweriframe = dom.byId('sede-tecnica-pdfjs').contentWindow;
   // let pdfjsLib = pdfJsVieweriframe.pdfjsLib;
-
   // pdfjsLib.GlobalWorkerOptions.workerSrc = '../build/pdf.worker.js';
-
   // let pdfJsViewer = pdfJsVieweriframe.PDFViewerApplication;
-
   // pdfJsViewer.open(pdfBuffer)
-  // this.pdfLoaderAnimation.hide();
+
 
 }
 
@@ -258,18 +218,8 @@ const DMSparameters: React.FC<DMSparametersProps> = ({ varFromChild }) => {
   const [currentPDFselected, setcurrentPDFselected] = useState(pdf_array[3]);
 
 
-
-  // const [pdf_array, setPdfList] = useState([]);
-
-  //   const pdfDoc = pdfService.parsePDFFromResponse(pdf_array[3].d.results[0].EData);
-  // if (pdfDoc) {
-  //   await pdfService.savePDFDocument(pdfDoc);
-  // }
-
-
   function tipologiaOnChange(type: string, params: any) {
     console.log('params', params)
-    console.log('config', config)
     // varFromChild(params)
 
     _getData(type, params).then(res => {
@@ -277,35 +227,20 @@ const DMSparameters: React.FC<DMSparametersProps> = ({ varFromChild }) => {
         console.log('_getData', res)
         if (type == 'tipologia') {
           setsede_tecnica_array(res)
-
-
-
-
-
-
-
         } else if (type == 'sede_tecnica') {
-
           // setarray_pdfs(res)  // QUANDO CI SARANNO I SERVIZI METTERE togliere comment qui
-
-
         } else if (type == 'dms_pdf') {
-
           // setPdfList(res)  //NON RICORDO PERCHE MI SERVIVA QUESTO :D
           // _sedeTecnicaPDFFilteringOnChange(null) // QUANDO CI SARANNO I SERVIZI METTERE togliere comment qui
-          console.log('pdf_array',pdf_array)
+          console.log('pdf_array', pdf_array)
           // setcurrentPDFselected(pdf_array['LO2928-VERB.VER.TECN.P'])// LO2928-VERB.VER.TECN.P
           // [5].d.results[0].Doknr
-          console.log('params',params)
-
-          let currentPDF = pdf_array.filter(el => {return el.d.results[0].Doknr == params })
-          console.log('currentPDF',currentPDF)
+          let currentPDF = pdf_array.filter(el => { return el.d.results[0].Doknr == params })
+          console.log('currentPDF', currentPDF)
           setcurrentPDFselected(currentPDF[0])
-
         } else {
           alert('SOMETHING WENT WRONG')
         }
-
 
       }, 2000);
 
@@ -342,31 +277,18 @@ const DMSparameters: React.FC<DMSparametersProps> = ({ varFromChild }) => {
   }
 
 
-  function letmesee(val:any) {
-    console.log('val',val)
-  }
-
-  var options = [{label:'weee', value:'0jqej'}]
   return (
 
     <div>
+      <button className="accordion">Parametri <span id="param_text"></span></button>
+      <div className='inner_dms_params_container'>
 
-            <button className="accordion">Parametri <span id="param_text"></span></button>
+        <h3 className='parametri_dms'>Tipologia</h3>
 
+        <FilteringSelect options={tipologie} onChange={e => tipologiaOnChange('tipologia', e.id)}>
+        </FilteringSelect>
 
-      <div className='inner_dms_params_container'> 
-
-
-
-
-      {/* <PdfGenerator /> */}
-
-      <h3 className='parametri_dms'>Tipologia</h3>
-
-      <FilteringSelect options={tipologie} onChange={e => tipologiaOnChange('tipologia', e.id)}>
-      </FilteringSelect>
-      
-      {/* <select className='select_dms'
+        {/* <select className='select_dms'
         onChange={e => tipologiaOnChange('tipologia', e.currentTarget.value)}
       >
 
@@ -377,12 +299,12 @@ const DMSparameters: React.FC<DMSparametersProps> = ({ varFromChild }) => {
 
       </select> */}
 
-      <h3 className='parametri_dms'>Sede Tecnica:</h3>
+        <h3 className='parametri_dms'>Sede Tecnica:</h3>
 
-  <FilteringSelect options={sedetecnica_array} onChange={e => tipologiaOnChange('sede_tecnica', e.name)}>
-      </FilteringSelect>
+        <FilteringSelect options={sedetecnica_array} onChange={e => tipologiaOnChange('sede_tecnica', e.name)}>
+        </FilteringSelect>
 
-      {/* <select className='select_dms'
+        {/* <select className='select_dms'
         onChange={e => tipologiaOnChange('sede_tecnica', e.target.value)}
       >
 
@@ -396,14 +318,14 @@ const DMSparameters: React.FC<DMSparametersProps> = ({ varFromChild }) => {
 
 
 
-      <h3 className='parametri_dms'>Documentazione DMS</h3>
+        <h3 className='parametri_dms'>Documentazione DMS</h3>
 
 
-  <FilteringSelect options={pdf_array} onChange={e => tipologiaOnChange('dms_pdf', e.d.results[0].Doknr)}>
-      </FilteringSelect>
+        <FilteringSelect options={pdf_array} onChange={e => tipologiaOnChange('dms_pdf', e.d.results[0].Doknr)}>
+        </FilteringSelect>
 
 
-      {/* <select className='select_dms'
+        {/* <select className='select_dms'
         onChange={e => tipologiaOnChange('dms_pdf', e.target.value)}
       >
 
@@ -414,7 +336,7 @@ const DMSparameters: React.FC<DMSparametersProps> = ({ varFromChild }) => {
 
       </select> */}
 
-</div>
+      </div>
 
       <button className="accordion">PDF <span id="param_text"></span></button>
 
@@ -425,10 +347,6 @@ const DMSparameters: React.FC<DMSparametersProps> = ({ varFromChild }) => {
         className="w-full"
       />
       {/* <PDFViewer dt={pdf_array[3]} /> */}
-      {/* <Document
-                  file={pdf_array[3].d.results[0].EData}
-                  className="border rounded-lg document_css"
-                ></Document> */}
 
 
     </div>
