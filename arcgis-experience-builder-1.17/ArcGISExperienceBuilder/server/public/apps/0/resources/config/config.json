@@ -1143,8 +1143,8 @@
           "type": "WIDGET",
           "widgetId": "widget_36",
           "bbox": {
-            "width": "329px",
-            "height": "39px"
+            "width": "544px",
+            "height": "36px"
           },
           "setting": {
             "autoProps": {
@@ -2647,7 +2647,7 @@
       "portalUrl": "https://muif.collaudodati.t-rfiservizi.corp/arcgis"
     }
   },
-  "timestamp": 1750319702582,
+  "timestamp": 1750319782438,
   "customTheme": {
     "colors": {
       "primary": "#0e6b69"
