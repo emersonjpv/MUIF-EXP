@@ -2425,7 +2425,7 @@
   },
   "exbVersion": "1.17.0",
   "mainSizeMode": "LARGE",
-  "theme": "themes/morandi/",
+  "theme": "themes/default/",
   "forBuilderAttributes": {
     "lockLayout": false
   },
@@ -2647,5 +2647,10 @@
       "portalUrl": "https://muif.collaudodati.t-rfiservizi.corp/arcgis"
     }
   },
-  "timestamp": 1750237639515
+  "timestamp": 1750237897757,
+  "customTheme": {
+    "colors": {
+      "primary": "#0e6b69"
+    }
+  }
 }

@@ -2,7 +2,7 @@
   "created": 1750237148633,
   "description": "",
   "id": "0",
-  "modified": 1750237641840,
+  "modified": 1750237897818,
   "owner": "portaladmin",
   "tags": [],
   "thumbnail": null,
@@ -13,7 +13,7 @@
     "EXB Experience",
     "Ready To Use",
     "JavaScript",
-    "status: Published",
+    "status: Changed",
     "version:1.17.0"
   ],
   "portalUrl": "https://muif.collaudodati.t-rfiservizi.corp/arcgis",

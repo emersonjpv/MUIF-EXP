@@ -3,38 +3,50 @@ import React, { useState } from 'react';
 import config from './config.json'
 import '../components/dms_parameters_style.css'
 import Query from "@arcgis/core/rest/support/Query.js";
+import intereese_Example from './intereese_Example.json'
+// import { Document, Page, pdfjs } from 'react-pdf';
+// import { PDFService, PDFDocument } from '../components/PDFService';
+
 
 
 import { jsx, css, uuidv1, DataSourceTypes, loadArcGISJSAPIModule, getAppStore, defaultMessages as jimuCoreMessages, hooks, polished, focusElementInKeyboardMode } from 'jimu-core'
 import FeatureLayer from 'esri/layers/FeatureLayer';
+// import PDFViewer from 'widgets/documentazione-dms-pdf/src/runtime/widget';
+
+import PDFViewer from './PDFViewer';
+
+
+
+
+
+
+
+
+// pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+//   'pdfjs-dist/build/pdf.worker.min.mjs',
+//   import.meta.url,
+// ).toString();
+
 
 
 interface DMSparametersProps {
   varFromChild: any;
 }
 
-const tipologie = [
-  { name: 'tratte', id: '0', url: "https://muif.collaudodati.t-rfiservizi.corp/agscarto/rest/services/SOI/Opere_demo/MapServer/3/" },
-  { name: 'Località', id: '1', url: config.urlLocalita, query: config.urlCavalcaviaQuery },
-  { name: 'Curva', id: '2', url: config.urlCavalcavia, query: config.urlCavalcaviaQuery },
-  { name: 'Ponte/viadotto/cavalcavia/sottopassaggio/sottovia', id: '3', url: config.urlCavalcavia, query: config.urlCavalcaviaQuery },
-  { name: 'Sottopassaggio di località', id: '4', url: config.urlCavalcavia, query: config.urlCavalcaviaQuery },
-  { name: 'Barriera antirumore', id: '5', url: config.urlCavalcavia, query: config.urlCavalcaviaQuery },
-  { name: 'Ponticello/tombino/sifone/cunicolo', id: '6', url: config.urlCavalcavia, query: config.urlCavalcaviaQuery },
-  { name: 'Attraversamenti e Parallelismi', id: '7', url: config.urlCavalcavia, query: config.urlCavalcaviaQuery },
-  { name: 'Sottostazione Elettrica', id: '8', url: config.urlCavalcavia, query: config.urlCavalcaviaQuery },
-]
+const tipologie = config.tipologie
+
+
+console.log('tipologie',tipologie)
 
 
 
+const pdf_array = config.pdf_array
 
-const pdf_array = [
-  { name: 'sample', id: '0', url: "https://muif.collaudodati.t-rfiservizi.corp/agscarto/rest/services/SOI/Opere_demo/MapServer/3/" },
-    { name: 'sample 2', id: '1', url: "https://muif.rfi.it/ProxyEsri/proxy.jsp?https://inreteese-wd.rfi.it/sap/opu/odata/SAP/ZMOO_SRV_SRV/DMSFILESet?$filter=Dokar%20eq%20%27PIS%27%20and%20Doknr%20eq%20%27LO0011-VERB.%20VER.%20TECN.%27%20and%20Dokvr%20eq%20%2701%27%20and%20Doktl%20eq%20%27001%27%20and%20ApplicationId%20eq%20%27005056BD660A1ED888BC5259D319E568%27%20and%20FileId%20eq%20%27005056BD660A1ED888BC5259D31A2568%27&$format=json" },
+console.log('pdf_array',pdf_array)
 
-]
+pdf_array.push(intereese_Example)
 
-
+console.log('pdf_array',pdf_array)
 
 
 async function _getData(type: string, params: any) {
@@ -51,16 +63,6 @@ async function _getData(type: string, params: any) {
     outfield = 'SETE'
 
 
-//     require(["esri/config"], function(esriConfig) {
-//   esriConfig.request.proxyUrl = "/proxy/Java/proxy.jsp";
-// });
-
-// require(["esri/core/urlUtils"], function(urlUtils) {
-//   urlUtils.addProxyRule({
-//     urlPrefix: "my-standalone-arcgis-server.com",
-//     proxyUrl: "/proxy/Java/proxy.php"
-//   });
-// });
 
     // let DMSDOCSet = 'https://muif.rfi.it/ProxyEsri/proxy.jsp?https://inreteese-wd.rfi.it/sap/opu/odata/SAP/ZMOO_SRV_SRV/DMSDOCSet?%24filter=Tplnr%20eq%20%27LO0011%27%20and%20ZmooPsf%20eq%20%27%27&$format=json'
     // let DMSDOCSet= "https://inreteese-wd.rfi.it/sap/opu/odata/SAP/ZMOO_SRV_SRV/DMSDOCSet?%24filter=Tplnr eq 'TPLNR_VALUE' and ZmooPsf eq ''&$format=json "
@@ -83,14 +85,10 @@ async function _getData(type: string, params: any) {
   let new_array = []
 
 
-
-
-
-
   esriRequest(completeRequestUrl, {
     query: {
       f: 'json',
-      q: "where=1%3D1&text=&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=SETE&returnGeometry=false&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&resultOffset=&resultRecordCount=&queryByDistance=&returnExtentsOnly=false&datumTransformation=&parameterValues=&rangeValues=&f=html"
+      q: "where=1%3D1&text=&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields="+outfield+"&returnGeometry=false&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&resultOffset=&resultRecordCount=&queryByDistance=&returnExtentsOnly=false&datumTransformation=&parameterValues=&rangeValues=&f=html"
     }
   }).then((result: any) => {
 
@@ -141,14 +139,16 @@ async function _getData(type: string, params: any) {
 
 
   async  function  _sedeTecnicaPDFFilteringOnChange ( Zurl ) {
+    console.log('Zurl',Zurl)
     // Zurl = 'https://muif.rfi.it/ProxyEsri/proxy.jsp?https://inreteese-wd.rfi.it/sap/opu/odata/SAP/ZMOO_SRV_SRV/DMSFILESet?$filter=Dokar%20eq%20%27PIS%27%20and%20Doknr%20eq%20%27LO2928-VERB.VER.TECN.P%27%20and%20Dokvr%20eq%20%2701%27%20and%20Doktl%20eq%20%27000%27%20and%20ApplicationId%20eq%20%270050568BA6DB1EDD9D969AE370AEA58C%27%20and%20FileId%20eq%20%270050568BA6DB1EDD9D969AE370AEE58C%27&$format=json'
     // Zurl = 'https://muif.rfi.it/ProxyEsri/proxy.jsp?https://inreteese-wd.rfi.it/sap/opu/odata/SAP/ZMOO_SRV_SRV/DMSFILESet?$filter=Dokar%20eq%20%27PIS%27%20and%20Doknr%20eq%20%27LO0011-VERB.%20VER.%20TECN.%27%20and%20Dokvr%20eq%20%2701%27%20and%20Doktl%20eq%20%27001%27%20and%20ApplicationId%20eq%20%27005056BD660A1ED888BC5259D319E568%27%20and%20FileId%20eq%20%27005056BD660A1ED888BC5259D31A2568%27&$format=json'
-    Zurl = 'https://muif.rfi.it/ProxyEsri/proxy.jsp?https://inreteese-wd.rfi.it/sap/opu/odata/SAP/ZMOO_SRV_SRV/DMSFILESet?$filter'
+    // Zurl = 'https://muif.rfi.it/ProxyEsri/proxy.jsp?https://inreteese-wd.rfi.it/sap/opu/odata/SAP/ZMOO_SRV_SRV/DMSFILESet?$filter'
                   const esriRequest: typeof __esri.request = await loadArcGISJSAPIModule('esri/request')
 
 
 
-                if( Zurl ) {
+                if( Zurl !== 'LO2928-VERB.VER.TECN.P') {
+                  console.log('Zurl', Zurl)
 
 
                   // esriConfig.request.proxyUrl = "https://muif.rfi.it/ProxyEsri/proxy.jsp";
@@ -176,15 +176,6 @@ async function _getData(type: string, params: any) {
                       // setLoading(false);
                     });
 
-
-
-
-
-
-
-
-                    
-
                   esriRequest(Zurl, {
                     headers: {
                       'Content-Type': 'application/json', // Tipo di contenuto
@@ -203,16 +194,23 @@ async function _getData(type: string, params: any) {
 
     if (result.features) {
       console.log('_displayPDFjs result', result)
-        this._displayPDFjs( result.d.results[0].EData )
+        _displayPDFjs( result.d.results[0].EData )
     }
   })
-
-
 
                     // SedeTecnicaPDFRequest.then( response => {
                     //   console.log('SedeTecnicaPDFRequest',response)
                     //     this._displayPDFjs( response.d.results[0].EData )
                     // });
+
+                }else{
+                  console.log('pdf_array[3].d.results[0].EData ',pdf_array[3].d.results[0].EData )
+
+                          _displayPDFjs( pdf_array[3].d.results[0].EData )
+
+                  return pdf_array[3].d.results[0].EData
+
+
 
                 }
             }
@@ -250,6 +248,11 @@ const DMSparameters: React.FC<DMSparametersProps> = ({ varFromChild }) => {
   const [sedetecnica_array, setsede_tecnica_array] = useState([]);
   // const [pdf_array, setPdfList] = useState([]);
 
+//   const pdfDoc = pdfService.parsePDFFromResponse(pdf_array[3].d.results[0].EData);
+// if (pdfDoc) {
+//   await pdfService.savePDFDocument(pdfDoc);
+// }
+
 
   function tipologiaOnChange(type: string, params: any) {
     console.log('params', params)
@@ -257,33 +260,40 @@ const DMSparameters: React.FC<DMSparametersProps> = ({ varFromChild }) => {
     varFromChild(params)
 
 
-    if(type == 'dms_pdf'){
-      _sedeTecnicaPDFFilteringOnChange(null)
-    }
-    _getData(type, params).then(res => {
-      setTimeout(() => {
-        console.log('_getData', res)
-        if (type == 'tipologia') {
-          setsede_tecnica_array(res)
-        } else if (type == 'dms_pdf') {
+    // if(type == 'dms_pdf'){
+    //   var pdf_data = _sedeTecnicaPDFFilteringOnChange(params)
+
+    //   console.log(pdf_data)
+    //   varFromChild(pdf_data)
+
+    // }
+    // _getData(type, params).then(res => {
+    //   setTimeout(() => {
+    //     console.log('_getData', res)
+    //     if (type == 'tipologia') {
+    //       setsede_tecnica_array(res)
+    //     } else if (type == 'dms_pdf') {
           
-          // setPdfList(res) 
-          _sedeTecnicaPDFFilteringOnChange(null)
+    //       // setPdfList(res) 
+    //       _sedeTecnicaPDFFilteringOnChange(null)
 
-        } else {
-          alert('SOMETHING WENT WRONG')
-        }
+    //     } else {
+    //       alert('SOMETHING WENT WRONG')
+    //     }
 
 
-      }, 2000);
+    //   }, 2000);
 
-    })
+    // })
 
 
   }
   return (
 
     <div>
+
+                {/* <PdfGenerator /> */}
+
       <h3>Tipologia</h3>
       <select className='select_dms'
         onChange={e => tipologiaOnChange('tipologia', e.currentTarget.value)}
@@ -313,15 +323,28 @@ const DMSparameters: React.FC<DMSparametersProps> = ({ varFromChild }) => {
       <h3>Documentazione DMS</h3>
 
       <select className='select_dms'
-        onChange={e => _sedeTecnicaPDFFilteringOnChange('dms_pdf')}
+        onChange={e => tipologiaOnChange('dms_pdf',e.target.value)}
       >
 
         {
           pdf_array.map((x, y) =>
-            <option key={y} value={x.id}>{x.name}</option>)
+            <option key={y} value={x.id}>{x.name || x.d.results[0].Doknr} </option>)
         }
 
       </select>
+
+
+        <PDFViewer 
+                    data={pdf_array[3]}
+                    width="100%"
+                    height="600px"
+                    className="w-full"
+                  />
+      {/* <PDFViewer dt={pdf_array[3]} /> */}
+               {/* <Document
+                  file={pdf_array[3].d.results[0].EData}
+                  className="border rounded-lg document_css"
+                ></Document> */}
 
 
     </div>

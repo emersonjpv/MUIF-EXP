@@ -16,17 +16,61 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 
 
 interface PDFViewerProps {
-  url: string;
+  dt: any;
 }
 
-const PDFViewer: React.FC<PDFViewerProps> = ({ url }) => {
+const PDFViewer: React.FC<PDFViewerProps> = ( {dt} ) => {
   const [numPages, setNumPages] = useState<number | null>(null);
   const [pageNumber, setPageNumber] = useState(1);
   const [scale, setScale] = useState(1);
   const [rotation, setRotation] = useState(0);
   const [error, setError] = useState<Error | null>(null);
+  const [pdfData, setPDF] = useState(null);
+
+  setTimeout(() => {
+       console.log('dt',dt)
+  //  JSON.parse(dt);
+  if(dt){
+   
+  // setPDF(dt)
+  // let pdfbffr = dt
+  // let pdfbffr = dt.d.results[0]
+  // let pdfbffr = dt.d.results[0].__metadata.uri
+  let pdfbffr = _displayPDFjs(dt.d.results[0].EData)
+  setPDF(pdfbffr)
+  console.log('pdfData',pdfData)
+    }
+
+  }, 5000);
+
+    
+      function _displayPDFjs( Base64PDF ) {
+
+                let pdfData = atob(Base64PDF);
+
+                var pdfBuffer = new Uint8Array(new ArrayBuffer(pdfData.length));
+
+                
+                for (var i = 0; i < pdfData.length; i++) {
+                    pdfBuffer[i] = pdfData.charCodeAt(i);
+                }
+
+                let pdfJsVieweriframe : any = document.getElementById('sede-tecnica-pdfjs')
+              
+                let pdfjsLib = pdfJsVieweriframe.pdfjsLib;
+
+                pdfjsLib.GlobalWorkerOptions.workerSrc = '../build/pdf.worker.js';
+
+                let pdfJsViewer = pdfJsVieweriframe.PDFViewerApplication;
+
+                pdfJsViewer.open(pdfBuffer)
+                // this.pdfLoaderAnimation.hide();
+
+            }
+
 
   const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
+
     setNumPages(numPages);
     setError(null);
   };
@@ -80,10 +124,16 @@ const PDFViewer: React.FC<PDFViewerProps> = ({ url }) => {
         </div>
       </div>
 
-      {url && (
+          <div className="App">
+    </div>
+ <div className="flex flex-col items-center dms_center_items">
+</div>
+
+      {pdfData && (
         <div className="flex flex-col items-center dms_center_items">
+          <div id="sede-tecnica-pdfjs"></div>
           <Document
-            file={url}
+            file={pdfData}
             onLoadSuccess={onDocumentLoadSuccess}
             className="border rounded-lg document_css"
           >
