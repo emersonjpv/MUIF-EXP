@@ -10,12 +10,12 @@ const FilteringSelect = ({ options, onChange }) => {
   };
 
   return (
-    <Select
+    <Select 
       value={selectedOption}
       onChange={handleChange}
       options={options}
-      getOptionLabel={(e) => e.name} // Come eseguire il mapping del valore
-      getOptionValue={(e) => e.name}
+      getOptionLabel={(e) => e.name || e.d.results[0].Doknr} // Come eseguire il mapping del valore
+      getOptionValue={(e) => e.name || e.d.results[0].Doknr}
       placeholder="Seleziona un'opzione"
       isSearchable // Abilita la ricerca
     />

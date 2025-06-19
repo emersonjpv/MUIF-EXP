@@ -363,24 +363,26 @@ const DMSparameters: React.FC<DMSparametersProps> = ({ varFromChild }) => {
 
       <h3 className='parametri_dms'>Tipologia</h3>
 
-      <FilteringSelect options={tipologie} onChange={letmesee}>
-
-
+      <FilteringSelect options={tipologie} onChange={e => tipologiaOnChange('tipologia', e.id)}>
       </FilteringSelect>
-      <select className='select_dms'
+      
+      {/* <select className='select_dms'
         onChange={e => tipologiaOnChange('tipologia', e.currentTarget.value)}
-      >o
+      >
 
         {
           tipologie.map((x, y) =>
             <option key={y} value={x.id}>{x.name}</option>)
         }
 
-      </select>
+      </select> */}
 
       <h3 className='parametri_dms'>Sede Tecnica:</h3>
 
-      <select className='select_dms'
+  <FilteringSelect options={sedetecnica_array} onChange={e => tipologiaOnChange('sede_tecnica', e.name)}>
+      </FilteringSelect>
+
+      {/* <select className='select_dms'
         onChange={e => tipologiaOnChange('sede_tecnica', e.target.value)}
       >
 
@@ -389,14 +391,19 @@ const DMSparameters: React.FC<DMSparametersProps> = ({ varFromChild }) => {
             <option key={y} value={x.name}>{x.name}</option>)
         }
 
-      </select>
+      </select> */}
 
 
 
 
       <h3 className='parametri_dms'>Documentazione DMS</h3>
 
-      <select className='select_dms'
+
+  <FilteringSelect options={pdf_array} onChange={e => tipologiaOnChange('dms_pdf', e.d.results[0].Doknr)}>
+      </FilteringSelect>
+
+
+      {/* <select className='select_dms'
         onChange={e => tipologiaOnChange('dms_pdf', e.target.value)}
       >
 
@@ -405,7 +412,7 @@ const DMSparameters: React.FC<DMSparametersProps> = ({ varFromChild }) => {
             <option key={y} value={x.id}>{x.name || x.d.results[0].Doknr} </option>)
         }
 
-      </select>
+      </select> */}
 
 </div>
 
